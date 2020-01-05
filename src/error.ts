@@ -1,4 +1,4 @@
-import { ErrorUtils } from './error-utils';
+import { ErrorUtils } from './utils/error';
 import { IError } from './interface';
 
 export class JSONAPIError {

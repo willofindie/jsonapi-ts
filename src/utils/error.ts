@@ -1,6 +1,6 @@
 'use strict';
 
-import { IError } from './interface';
+import { IError } from '../interface';
 
 export const ErrorUtils = (errors: IError[]) =>
   errors.reduce<IError[]>((_errors, error) => {

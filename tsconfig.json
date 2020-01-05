@@ -1,5 +1,9 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "src/*": ["src/*"]
+    },
     "moduleResolution": "node",
     "target": "es5",
     "module":"es2015",
@@ -8,15 +12,27 @@
     "sourceMap": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "declarationDir": "dist/types",
     "outDir": "dist/lib",
     "typeRoots": [
       "node_modules/@types"
+    ],
+    "types": [
+      "jest",
+      "node"
     ]
   },
   "include": [
     "src"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "tools",
+    "rollup.config.ts"
   ]
 }
