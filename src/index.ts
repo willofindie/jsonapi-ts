@@ -2,3 +2,4 @@
 // import "core-js/fn/array.find"
 // ...
 export * from './error';
+export * from './serializer';

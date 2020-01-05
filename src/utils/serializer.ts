@@ -1,4 +1,4 @@
-import pluralize from 'pluralize';
+import * as pluralize from 'pluralize';
 
 import { ISerializeOptions, IResource, IAttribute } from '../interface';
 
@@ -11,7 +11,7 @@ export class SerializerUtils {
   }
 
   get type(): string {
-    return pluralize(this.resourceName);
+    return pluralize.plural(this.resourceName);
   }
 
   withName(resourceName: string): SerializerUtils {
