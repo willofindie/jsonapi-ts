@@ -1,3 +1,7 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
@@ -41,29 +45,23 @@ var JSONAPIError = /** @class */ (function () {
     return JSONAPIError;
 }());
 
-var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
-
-function commonjsRequire () {
-	throw new Error('Dynamic requires are not currently supported by rollup-plugin-commonjs');
-}
-
-function createCommonjsModule(fn, module) {
-	return module = { exports: {} }, fn(module, module.exports), module.exports;
-}
-
-var pluralize = createCommonjsModule(function (module, exports) {
 /* global define */
 
 (function (root, pluralize) {
   /* istanbul ignore else */
-  if (typeof commonjsRequire === 'function' && 'object' === 'object' && 'object' === 'object') {
+  if (typeof require === 'function' && typeof exports === 'object' && typeof module === 'object') {
     // Node.
     module.exports = pluralize();
+  } else if (typeof define === 'function' && define.amd) {
+    // AMD, registers as an anonymous module.
+    define(function () {
+      return pluralize();
+    });
   } else {
     // Browser global.
     root.pluralize = pluralize();
   }
-})(commonjsGlobal, function () {
+})(undefined, function () {
   // Rule storage - pluralize and singularize need to be run sequentially,
   // while other rules can be optimized using an object for instant lookups.
   var pluralRules = [];
@@ -550,6 +548,9 @@ var pluralize = createCommonjsModule(function (module, exports) {
 
   return pluralize;
 });
+
+var pluralize = /*#__PURE__*/Object.freeze({
+    __proto__: null
 });
 
 var SerializerUtils = /** @class */ (function () {
@@ -566,7 +567,7 @@ var SerializerUtils = /** @class */ (function () {
     });
     Object.defineProperty(SerializerUtils.prototype, "type", {
         get: function () {
-            return pluralize(this.resourceName);
+            return undefined(this.resourceName);
         },
         enumerable: true,
         configurable: true
@@ -626,7 +627,6 @@ var JSONAPISerializer = /** @class */ (function () {
     return JSONAPISerializer;
 }());
 
-// Import here Polyfills if needed. Recommended core-js (npm i -D core-js)
-
-export { JSONAPIError, JSONAPISerializer };
-//# sourceMappingURL=index.es5.js.map
+exports.JSONAPIError = JSONAPIError;
+exports.JSONAPISerializer = JSONAPISerializer;
+//# sourceMappingURL=index.cjs.js.map
