@@ -123,4 +123,4 @@ var JSONAPISerializer = /** @class */ (function () {
 
 exports.JSONAPIError = JSONAPIError;
 exports.JSONAPISerializer = JSONAPISerializer;
-//# sourceMappingURL=index.cjs.js.map
+//# sourceMappingURL=index.js.map
