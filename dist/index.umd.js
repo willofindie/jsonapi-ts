@@ -1,5 +1,8 @@
-var index = (function (exports) {
-    'use strict';
+(function (global, factory) {
+    typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+    typeof define === 'function' && define.amd ? define(['exports'], factory) :
+    (global = global || self, factory(global.index = {}));
+}(this, (function (exports) { 'use strict';
 
     /*! *****************************************************************************
     Copyright (c) Microsoft Corporation. All rights reserved.
@@ -629,7 +632,7 @@ var index = (function (exports) {
     exports.JSONAPIError = JSONAPIError;
     exports.JSONAPISerializer = JSONAPISerializer;
 
-    return exports;
+    Object.defineProperty(exports, '__esModule', { value: true });
 
-}({}));
+})));
 //# sourceMappingURL=index.umd.js.map
