@@ -90,7 +90,7 @@
   },
   "dependencies": {
     "@types/pluralize": "^0.0.29",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "pluralize": "^8.0.0"
   },
   "_moduleAliases": {
